@@ -1,0 +1,280 @@
+/* =========================
+   SP FV
+========================= */
+@media screen and (max-width: 768px){
+
+  .fv{
+    min-height:100vh;        /* ← これが重要 */
+    padding:110px 0 100px;
+    display:flex;
+    align-items:center;
+  }
+
+  .fv .inner{
+    padding:0 24px;
+  }
+
+  .fv-catch{
+    font-size:34px;
+    line-height:1.25;
+    letter-spacing:-0.4px;
+  }
+
+  .fv-sub{
+    font-size:15px;
+    line-height:1.6;
+    margin-top:16px;
+  }
+
+}
+
+/* =========================
+   SP circle設計（scale廃止）
+========================= */
+@media screen and (max-width: 768px){
+
+  .circle-layer{
+    transform:none;
+  }
+
+  /* ===== コーラル主役 ===== */
+  .circle.coral-main{
+    width:480px;
+    height:480px;
+    right:-200px;   /* ← さらに逃がす */
+    top:-120px;
+  }
+
+  /* ===== ブルー中央（少し右寄せ） ===== */
+  .circle.blue-main{
+  width:240px;          /* ← 少し小さく */
+  height:240px;
+
+  top:270px;
+  left:35%; 
+  transform:translateX(-50%);
+
+  opacity:0.9;          /* ← ほんの少し柔らかく */
+}
+
+  /* ===== 下の土台（中央寄せ） ===== */
+  .circle.blue-base{
+    width:600px;
+    height:600px;
+    left:-100px;     /* ← もっと中央へ */
+    bottom:-160px;
+    opacity:0.55;
+  }
+
+  .circle.coral-base{
+    display:none;
+  }
+
+}
+
+/* =========================
+   fix-service SP 完全版
+========================= */
+@media screen and (max-width:768px){
+
+  /* ===== レイアウト ===== */
+  .fix-list{
+    max-width:360px;
+    margin:32px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:26px 18px;
+  }
+
+  /* PC用の位置指定をリセット */
+  .fix-list li:nth-child(1),
+  .fix-list li:nth-child(2),
+  .fix-list li:nth-child(3),
+  .fix-list li:nth-child(4),
+  .fix-list li:nth-child(5){
+    grid-column:auto;
+  }
+
+  /* ===== カード本体 ===== */
+  .fix-list li{
+  padding:18px 14px;
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.08);  /* ← ほぼ透明 */
+
+  backdrop-filter:blur(28px);        /* ← ぼかし強め */
+
+  box-shadow:
+    0 14px 35px rgba(0,0,0,0.10),
+    inset 0 2px 6px rgba(255,255,255,0.6);
+
+  position:relative;
+  z-index:5;
+}
+
+  /* ===== アイコン ===== */
+  .fix-list li img{
+    width:72px;
+    margin-bottom:8px;
+  }
+
+  /* ===== テキスト ===== */
+  .fix-list li span{
+    font-size:14px;
+    line-height:1.45;
+    white-space:normal;
+    letter-spacing:.02em;
+    color:#2b2b2b;
+  }
+
+  /* ===== タップ時だけ少し反応 ===== */
+  .fix-list li:active{
+    transform:scale(.97);
+    background:rgba(255,255,255,0.34);
+  }
+
+  /* ===== タイトル ===== */
+  .fix-service .sec-title{
+    font-size:32px;
+    position:relative;
+    z-index:20;
+    color:rgba(50,40,38,0.9);
+  }
+
+}
+
+/* =========================
+   fix-example SP調整
+========================= */
+@media screen and (max-width:768px){
+
+  /* 前セクションとの余白を詰める */
+  .fix-example{
+    margin-top:0;
+    padding:60px 0;
+  }
+
+  /* タイトルサイズ少し調整 */
+  .fix-example .sec-title{
+    font-size:32px;
+    margin-bottom:22px;
+  }
+
+  /* 説明文の折り返しを自然に */
+  .fix-note{
+    max-width:220px;
+    margin:14px auto 0;   /* ← 中央寄せ */
+    font-size:13px;
+    line-height:1.7;
+    text-align:left;
+    padding-left:1.2em;   /* ← インデント用 */
+    text-indent:-1.2em;   /* ← ※だけ戻す */ 
+
+  }
+
+}
+
+@media screen and (max-width:768px){
+
+  /* ===== セクション間の余白を詰める ===== */
+  .fix-price{
+    margin-top:50px;   /* 100 → 40 */
+    padding-top:10px;  /* 少しだけ上呼吸 */
+  }
+
+  /* ===== 見出し ===== */
+  .fix-price .sec-title{
+    font-size:32px;
+    margin-bottom:24px;  /* 40 → 24 */
+  }
+
+  /* ===== メイン価格 ===== */
+  .price-main{
+    font-size:56px;      /* 70 → 56 */
+    line-height:1.1;
+    letter-spacing:.02em;
+    color:#1f2a30; 
+  }
+
+  /* ===== サブコピー ===== */
+  .price-sub{
+    margin-top:14px;
+    font-size:18px;      /* 22 → 18 */
+    letter-spacing:.03em;
+  }
+
+  /* ===== 注意書き ===== */
+  .price-note{
+    margin-top:10px;
+    font-size:12px;
+    opacity:.65;
+  }
+
+}
+
+@media screen and (max-width:768px){
+
+  /* ===== セクション間を詰める ===== */
+  .contact{
+    margin-top:40px;          /* 100 → 40 */
+    padding:70px 0 90px;      /* 120/140 → 軽くする */
+  }
+
+  /* ===== 見出し ===== */
+  .contact .sec-title{
+    font-size:32px;
+    margin-bottom:18px;
+  }
+
+  /* ===== リード文（締める） ===== */
+  .contact-lead{
+    max-width:300px;
+    margin:0 auto 36px;
+    text-align:left;          /* ← 中央→左 */
+    line-height:1.8;
+    font-size:15px;
+  }
+
+  /* ===== フォーム幅をややコンパクトに ===== */
+  .contact-form{
+    max-width:340px;
+    gap:18px;
+  }
+
+  /* ===== ボタン少しだけ締める ===== */
+  .contact-submit{
+    min-width:200px;
+    padding:14px 36px;
+    border-radius:28px;       /* 少しだけシャープに */
+    margin-top:14px;  
+  }
+
+}
+
+
+/* =====================
+   表示切り替え
+===================== */
+
+/* デフォルト（PC基準） */
+.sp-only{
+  display:none;
+}
+
+.pc-only{
+  display:block;
+}
+
+/* SP */
+@media screen and (max-width:768px){
+
+  .sp-only{
+    display:block;
+  }
+
+  .pc-only{
+    display:none;
+  }
+
+}
